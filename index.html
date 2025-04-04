@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        input, button { margin: 10px; padding: 10px; width: 80%; max-width: 300px; }
+        #login, #user-panel, #admin-panel { display: none; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 10px; text-align: center; }
+        .present { background-color: lightgreen; }
+        .absent { background-color: lightcoral; }
+    </style>
+</head> 
+<body>
+
+    <h2>Attendance Portal</h2>
+
+    <!-- Login Section -->
+    <div id="login">
+        <input type="text" id="username" placeholder="Enter Employee/Admin ID">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- User Panel -->
+    <div id="user-panel">
+        <h3>Welcome <span id="user-name"></span></h3>
+        <h4>Mark Your Work Timings</h4>
+        <button onclick="markLogin()" id="login-btn">Mark Login</button>
+        <button onclick="markLogout()" id="logout-btn">Mark Logout</button>
+        <p id="work-status"></p>
+        <table id="user-log-table"></table>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="admin-panel">
+        <h3>Admin Panel</h3>
+        <h4>All Employees Work Logs</h4>
+        <table id="admin-log-table"></table>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
